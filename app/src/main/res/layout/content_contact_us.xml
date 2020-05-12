@@ -1,0 +1,87 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/support"
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+            android:contentDescription="logo"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="120dp"
+            android:src ="@drawable/ic_support"/>
+
+        <LinearLayout
+            android:layout_centerHorizontal="true"
+            android:id="@+id/icons"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="80dp"
+            android:gravity="center"
+            android:layout_below="@+id/support">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+                <ImageButton
+                    android:contentDescription="CALL"
+                    android:tag="CALL"
+                    android:id="@+id/call"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/phone_circle"/>
+
+
+                <ImageButton
+                    android:id="@+id/mail"
+                    android:tag="SMS"
+                    android:contentDescription="SMS"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="20dp"
+                    android:src="@drawable/ic_textsms_black_24dp"/>
+
+
+                <ImageButton
+                    android:contentDescription="EMAIL"
+                    android:id="@+id/web"
+                    android:tag="EMAIl"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="20dp"
+                    android:src ="@drawable/email_support"/>
+
+            </LinearLayout>
+
+
+
+
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="We Respond as Soon as Possible"
+            android:layout_below="@+id/icons"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            android:textColor="@color/colorPrimaryDark"
+            android:layout_marginTop="30dp"
+            android:layout_centerHorizontal="true"/>
+
+
+    </RelativeLayout>
+
+
+</LinearLayout >

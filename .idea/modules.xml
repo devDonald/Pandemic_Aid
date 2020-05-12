@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Pandemic Aid.iml" filepath="$PROJECT_DIR$/Pandemic Aid.iml" group="Pandemic Aid" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" group="Pandemic Aid/app" />
+    </modules>
+  </component>
+</project>

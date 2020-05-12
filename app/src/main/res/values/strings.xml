@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">PandemicAid</string>
+    <string name="nav_home">Home</string>
+    <string name="nav_about">About Covid-19</string>
+    <string name="nav_take_a_test">Take a Test</string>
+    <string name="nav_report_a_case">Report a Case</string>
+    <string name="nav_high_risk_areas">High Risk Areas</string>
+    <string name="nav_see_a_doctor">See a Doctor</string>
+    <string name="nav_contact_channels">Contact Channels</string>
+    <string name="drawer_open">Open navigation drawer</string>
+    <string name="drawer_close">Close navigation drawer</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="nav_contact_us">Contact Us</string>
+    <string name="nav_about_us">About Us</string>
+    <string name="nav_share_app">Share App</string>
+    <string name="title_activity_my_location_map">Map</string>
+    <string name="title_activity_take_test">Take Test</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="title_activity_report_a_case">Report A Case</string>
+</resources>

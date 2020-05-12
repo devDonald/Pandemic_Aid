@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_home_black_24dp"
+            android:title="@string/nav_home" />
+        <item
+            android:id="@+id/nav_about"
+            android:icon="@drawable/ic_info"
+            android:title="@string/nav_about" />
+        <item
+            android:id="@+id/nav_take_test"
+            android:icon="@drawable/ic_test"
+            android:title="@string/nav_take_a_test" />
+        <item
+            android:id="@+id/nav_report"
+            android:icon="@drawable/ic_report"
+            android:title="@string/nav_report_a_case" />
+        <item
+            android:id="@+id/nav_high_risk"
+            android:icon="@drawable/ic_high_risk"
+            android:title="@string/nav_high_risk_areas" />
+        <item
+            android:id="@+id/nav_see_doctor"
+            android:icon="@drawable/ic_doctor"
+            android:title="@string/nav_see_a_doctor" />
+        <item
+            android:id="@+id/nav_contact_channel"
+            android:icon="@drawable/ic_contact_phone_black_24dp"
+            android:title="@string/nav_contact_channels" />
+    </group>
+
+    <item android:title="Sub Menu">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/nav_contact_us"
+                    android:icon="@drawable/email_support"
+                    android:title="@string/nav_contact_us" />
+                <item
+                    android:id="@+id/nav_about_us"
+                    android:icon="@drawable/ic_about_us"
+                    android:title="@string/nav_about_us" />
+                <item
+                    android:id="@+id/nav_share_app"
+                    android:icon="@drawable/ic_share_black"
+                    android:title="@string/nav_share_app" />
+            </group>
+        </menu>
+    </item>
+</menu>
