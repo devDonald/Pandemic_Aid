@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "921506986532",
+    "firebase_url": "https://pandemicaid.firebaseio.com",
+    "project_id": "pandemicaid",
+    "storage_bucket": "pandemicaid.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:921506986532:android:b8162ad92a9936609c76b1",
+        "android_client_info": {
+          "package_name": "com.gnorizon.solutions.pandemic_aid"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "921506986532-eg39v42gqs0sf7vsn49veo8ujramdenf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.gnorizon.solutions.pandemic_aid",
+            "certificate_hash": "e666dcc3244ef10d55088e8636c6d36df574b992"
+          }
+        },
+        {
+          "client_id": "921506986532-gfikfq5e652r59g2cpqgq4d8njqdkm0k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB7GhF-dOU4gQ8BCHUq_UFLFBRgBZswaDw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "921506986532-gfikfq5e652r59g2cpqgq4d8njqdkm0k.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

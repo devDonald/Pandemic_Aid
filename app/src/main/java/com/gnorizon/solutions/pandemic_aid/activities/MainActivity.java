@@ -14,6 +14,7 @@ import com.gnorizon.solutions.pandemic_aid.fragment.ContactChannels;
 import com.gnorizon.solutions.pandemic_aid.fragment.HighRiskAreas;
 import com.gnorizon.solutions.pandemic_aid.fragment.Home;
 import com.gnorizon.solutions.pandemic_aid.fragment.SeeDoctor;
+import com.gnorizon.solutions.pandemic_aid.helpers.GPSTracker;
 import com.google.android.material.navigation.NavigationView;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
@@ -21,6 +22,7 @@ import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.util.Log;
 import android.view.MenuItem;
 
 

@@ -67,6 +67,8 @@ public class TakeTest extends AppCompatActivity implements
             createLocationRequest();
 
         }
+        Log.d("longitude",""+longitude);
+
     }
 
     private void initControls() {
@@ -253,8 +255,7 @@ public class TakeTest extends AppCompatActivity implements
     public void onLocationChanged(Location location) {
 // Assign the new location
         mLocation = location;
-        Toast.makeText(getApplicationContext(), "Location changed!",
-                Toast.LENGTH_SHORT).show();
+
 // Displaying the new location on UI
         displayLocation();
     }

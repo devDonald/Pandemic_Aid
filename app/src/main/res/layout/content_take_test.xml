@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout
-    android:layout_width="match_parent"
+<FrameLayout android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
@@ -11,12 +11,157 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         >
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|center_horizontal"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="5dp">
 
+                <LinearLayout
+                    android:layout_marginTop="100dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    >
+                    <TextView
+                        android:layout_gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/home_head1"
+                        android:textAlignment="center"
+                        android:gravity="center"
+                        android:textSize="22sp"
+                        android:textStyle="bold"
+                        android:text="Select The Symptoms You Are Having?"
+                        />
+
+                    <View
+                        android:layout_marginTop="5dp"
+                        android:layout_marginStart="15dp"
+                        android:layout_width="100dp"
+                        android:layout_gravity="center"
+                        android:layout_height="2dp"
+                        android:background="@android:color/black"
+                        />
+                    <View
+                        android:layout_gravity="center"
+                        android:layout_marginTop="3dp"
+                        android:layout_width="100dp"
+                        android:layout_height="2dp"
+                        android:background="@android:color/black"
+
+                        />
+                    <TextView
+                        android:layout_marginTop="10dp"
+                        android:layout_gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/home_head2"
+                        android:textAlignment="center"
+                        android:gravity="center"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:text="Check the boxes that corresponds to your symptoms"
+                        />
+
+                    <View
+                        android:layout_gravity="center"
+                        android:layout_marginTop="3dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:background="@android:color/black"/>
+
+                    <androidx.appcompat.widget.AppCompatCheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/have_dry_cough"
+                        android:text="Do You Have Dry Cough?"
+                        />
+                    <androidx.appcompat.widget.AppCompatCheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/have_cold"
+                        android:text="Do you have Cold?"
+                        />
+                    <androidx.appcompat.widget.AppCompatCheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/have_sore_throat"
+                        android:text="Do you have Sore Throat?"
+                        />
+                    <androidx.appcompat.widget.AppCompatCheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/have_diarrhea"
+                        android:text="Do you have Diarrhea?"
+                        />
+                    <androidx.appcompat.widget.AppCompatCheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/have_headache"
+                        android:text="Do you have a Head Ache?"
+                        />
+                    <androidx.appcompat.widget.AppCompatCheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/have_fatigue"
+                        android:text="Are you experiencing Fatigue?"
+                        />
+                    <androidx.appcompat.widget.AppCompatCheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/have_high_temp"
+                        android:text="Do you have Fever (Temp Above 38 degree celsuis)?"
+                        />
+                    <androidx.appcompat.widget.AppCompatCheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/have_difficult_breathing"
+                        android:text="Do you have Difficulty Breathing?"
+                        />
+                    <androidx.appcompat.widget.AppCompatCheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/have_body_aches"
+                        android:text="Do you have MYALGIA or Body Aches?"
+                        />
+                    <androidx.appcompat.widget.AppCompatCheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/have_traveled"
+                        android:text="Have you travelled recently in the Last 14 days?"
+                        />
+                    <androidx.appcompat.widget.AppCompatCheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/travel_history"
+                        android:text="Do you have a travel history to a COVID-19 Infected Area?"
+                        />
+                    <androidx.appcompat.widget.AppCompatCheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/direct_contact"
+                        android:text="Did you have direct contact or are taking care of a COVID-19 Patient?"
+                        />
+
+                    <Button
+                        android:layout_margin="20dp"
+                        android:id="@+id/submit_test"
+                        android:background="@drawable/background_red"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="20sp"
+                        android:text="Submit Test"
+                        />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+        </ScrollView>
 
     </fragment>
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical|center_horizontal"
-        android:text="Take a Test" />
 </FrameLayout>

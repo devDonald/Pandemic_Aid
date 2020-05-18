@@ -19,11 +19,11 @@
         <activity
             android:name=".activities.ReportACase"
             android:label="@string/title_activity_report_a_case"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            ></activity>
         <activity
             android:name=".activities.TakeTest"
             android:label="@string/title_activity_take_test"
-            android:theme="@style/AppTheme.NoActionBar" />
+            />
         <activity android:name=".activities.Intro">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -45,7 +45,8 @@
 
         <uses-library android:name="com.google.android.maps" />
 
-        <activity android:name=".activities.MainActivity" />
+        <activity android:name=".activities.MainActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
         <activity
             android:name=".activities.ContactUs"
             android:label="Contact Us" />

@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="Gradle: com.nabinbhandari.android:permissions:3.7@aar">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/e52a04e4458e0b25c0f787c03030d712/jetified-permissions-3.7/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/e52a04e4458e0b25c0f787c03030d712/jetified-permissions-3.7/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/1d83412619a6b26f990a401c8f4cb069/jetified-permissions-3.7/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/1d83412619a6b26f990a401c8f4cb069/jetified-permissions-3.7/res" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.nabinbhandari.android/permissions/3.7/c6723abad0d9a0904c41ea59f8d0b3d1bea0176d/permissions-3.7-javadoc.jar!/" />
