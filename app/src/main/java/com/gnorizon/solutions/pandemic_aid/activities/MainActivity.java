@@ -13,8 +13,6 @@ import com.gnorizon.solutions.pandemic_aid.fragment.AboutCovid19;
 import com.gnorizon.solutions.pandemic_aid.fragment.ContactChannels;
 import com.gnorizon.solutions.pandemic_aid.fragment.HighRiskAreas;
 import com.gnorizon.solutions.pandemic_aid.fragment.Home;
-import com.gnorizon.solutions.pandemic_aid.fragment.SeeDoctor;
-import com.gnorizon.solutions.pandemic_aid.helpers.GPSTracker;
 import com.google.android.material.navigation.NavigationView;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
@@ -22,7 +20,6 @@ import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-import android.util.Log;
 import android.view.MenuItem;
 
 
@@ -91,9 +88,9 @@ public class MainActivity extends AppCompatActivity
                 break;
 
             case R.id.nav_contact_channel:
+                Intent contactChannel = new Intent(MainActivity.this, ContactChannels.class);
+                startActivity(contactChannel);
 
-                fragmentClass = ContactChannels.class;
-                getSupportActionBar().setTitle("Contact Channels");
                 break;
 
             case R.id.nav_about_us:
@@ -118,11 +115,6 @@ public class MainActivity extends AppCompatActivity
             case R.id.nav_about:
                 fragmentClass = AboutCovid19.class;
                 getSupportActionBar().setTitle("About Covid-19");
-                break;
-
-            case R.id.nav_see_doctor:
-                fragmentClass = SeeDoctor.class;
-                getSupportActionBar().setTitle("See a Doctor");
                 break;
 
             case R.id.nav_contact_us:

@@ -55,14 +55,11 @@ public class HighRiskAreas extends Fragment {
 
         String url = "https://www.reportcovid19.org/riskareas/";
 
-        webView.getSettings().setJavaScriptEnabled(true);
+        //webView.getSettings().setJavaScriptEnabled(true);
         webView.getSettings().setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK);
         webView.loadUrl(url);
 
         webView.loadUrl("https://www.reportcovid19.org/riskareas/");
-
-
-        webView.getSettings().setJavaScriptEnabled(true); // enable javascript
 
         webView.getSettings().setLoadWithOverviewMode(true);
         webView.getSettings().setUseWideViewPort(true);

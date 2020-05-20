@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout android:layout_width="match_parent"
+<RelativeLayout android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
@@ -8,160 +8,585 @@
     <fragment
         android:id="@+id/map1"
         android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        >
+
+    </fragment>
+    <ScrollView
+        android:layout_alignParentTop="true"
+        android:background="@drawable/border_red"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         >
-        <ScrollView
+        <androidx.cardview.widget.CardView
+            android:layout_marginTop="10dp"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            >
-            <androidx.cardview.widget.CardView
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="5dp">
+
+            <LinearLayout
+                android:layout_marginTop="20dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical|center_horizontal"
-                app:cardCornerRadius="10dp"
-                app:cardElevation="5dp">
+                android:orientation="vertical"
+                >
+                <TextView
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/home_head1"
+                    android:textAlignment="center"
+                    android:gravity="center"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:text="Select The Symptoms You Are Having?"
+                    />
+
+                <View
+                    android:layout_marginTop="5dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_width="100dp"
+                    android:layout_gravity="center"
+                    android:layout_height="2dp"
+                    android:background="@android:color/black"
+                    />
+                <View
+                    android:layout_gravity="center"
+                    android:layout_marginTop="3dp"
+                    android:layout_width="100dp"
+                    android:layout_height="2dp"
+                    android:background="@android:color/black"
+
+                    />
+                <TextView
+                    android:layout_marginTop="10dp"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/home_head2"
+                    android:textAlignment="center"
+                    android:gravity="center"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:fontFamily="casual"
+                    android:text="Check the boxes that corresponds to your symptoms"
+                    />
+
+                <View
+                    android:layout_gravity="center"
+                    android:layout_marginTop="3dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="@android:color/black"/>
+                <HorizontalScrollView
+                    android:background="@drawable/border_red"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:scrollbars="horizontal">
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <RadioGroup
+                            android:layout_margin="10dp"
+                            android:id="@+id/cough_group"
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:padding="8dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Do You Have Dry Cough?"
+                                android:textColor="@android:color/holo_blue_dark"
+                                android:textStyle="bold"
+                                android:id="@+id/dry_cough_text"
+                                />
+                            <RadioButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/dry_cough_yes"
+                                android:hint="Yes"
+                                android:textColorHint="@android:color/holo_blue_dark"
+                                />
+
+                            <RadioButton
+                                android:textColorHint="@android:color/holo_blue_dark"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/dry_cough_no"
+                                android:hint="No"
+                                />
+                        </RadioGroup>
+                        <RadioGroup
+                            android:layout_margin="10dp"
+                            android:id="@+id/cold_group"
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:padding="8dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Do you have Cold?"
+                                android:textColor="@android:color/holo_blue_dark"
+                                android:textStyle="bold"
+                                android:id="@+id/cold_text"
+                                />
+                            <RadioButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/cold_yes"
+                                android:hint="Yes"
+                                android:textColorHint="@android:color/holo_blue_dark"
+                                />
+
+                            <RadioButton
+                                android:textColorHint="@android:color/holo_blue_dark"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/cold_no"
+                                android:hint="No"
+                                />
+                        </RadioGroup>
+                        <RadioGroup
+                            android:layout_margin="10dp"
+                            android:id="@+id/sore_group"
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:padding="8dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Do you have Sore Throat?"
+                                android:textColor="@android:color/holo_blue_dark"
+                                android:textStyle="bold"
+                                android:id="@+id/sore_text"
+                                />
+                            <RadioButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/sore_yes"
+                                android:hint="Yes"
+                                android:textColorHint="@android:color/holo_blue_dark"
+                                />
+
+                            <RadioButton
+                                android:textColorHint="@android:color/holo_blue_dark"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/sore_no"
+                                android:hint="No"
+                                />
+                        </RadioGroup>
+                        <RadioGroup
+                            android:layout_margin="10dp"
+                            android:id="@+id/diarrhea_group"
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:padding="8dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Do you have Diarrhea?"
+                                android:textColor="@android:color/holo_blue_dark"
+                                android:textStyle="bold"
+                                android:id="@+id/diarrhea_text"
+                                />
+                            <RadioButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/diarrhea_yes"
+                                android:hint="Yes"
+                                android:textColorHint="@android:color/holo_blue_dark"
+                                />
+
+                            <RadioButton
+                                android:textColorHint="@android:color/holo_blue_dark"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/diarrhea_no"
+                                android:hint="No"
+                                />
+                        </RadioGroup>
+                        <RadioGroup
+                            android:layout_margin="10dp"
+                            android:id="@+id/aches_group"
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:padding="8dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Do you have a Head Ache?"
+                                android:textColor="@android:color/holo_blue_dark"
+                                android:textStyle="bold"
+                                android:id="@+id/aches_text"
+                                />
+                            <RadioButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/aches_yes"
+                                android:hint="Yes"
+                                android:textColorHint="@android:color/holo_blue_dark"
+                                />
+
+                            <RadioButton
+                                android:textColorHint="@android:color/holo_blue_dark"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/aches_no"
+                                android:hint="No"
+                                />
+                        </RadioGroup>
+                        <RadioGroup
+                            android:layout_margin="10dp"
+                            android:id="@+id/fatigue_group"
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:padding="8dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Are you experiencing Fatigue?"
+                                android:textColor="@android:color/holo_blue_dark"
+                                android:textStyle="bold"
+                                android:id="@+id/fatigue_text"
+                                />
+                            <RadioButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/fatigue_yes"
+                                android:hint="Yes"
+                                android:textColorHint="@android:color/holo_blue_dark"
+                                />
+
+                            <RadioButton
+                                android:textColorHint="@android:color/holo_blue_dark"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/fatigue_no"
+                                android:hint="No"
+                                />
+                        </RadioGroup>
+                        <RadioGroup
+                            android:layout_margin="10dp"
+                            android:id="@+id/fever_group"
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:padding="8dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Do you have Fever (Temp Above 38 degree celsuis)?"
+                                android:textColor="@android:color/holo_blue_dark"
+                                android:textStyle="bold"
+                                android:id="@+id/fever_text"
+                                />
+                            <RadioButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/fever_yes"
+                                android:hint="Yes"
+                                android:textColorHint="@android:color/holo_blue_dark"
+                                />
+
+                            <RadioButton
+                                android:textColorHint="@android:color/holo_blue_dark"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/fever_no"
+                                android:hint="No"
+                                />
+                        </RadioGroup>
+                        <RadioGroup
+                            android:layout_margin="10dp"
+                            android:id="@+id/difficult_group"
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:padding="8dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Do you have Difficulty Breathing?"
+                                android:textColor="@android:color/holo_blue_dark"
+                                android:textStyle="bold"
+                                android:id="@+id/difficult_text"
+                                />
+                            <RadioButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/difficult_yes"
+                                android:hint="Yes"
+                                android:textColorHint="@android:color/holo_blue_dark"
+                                />
+
+                            <RadioButton
+                                android:textColorHint="@android:color/holo_blue_dark"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/difficult_no"
+                                android:hint="No"
+                                />
+                        </RadioGroup>
+                        <RadioGroup
+                            android:layout_margin="10dp"
+                            android:id="@+id/body_aches_group"
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:padding="8dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Do you have MYALGIA or Body Aches?"
+                                android:textColor="@android:color/holo_blue_dark"
+                                android:textStyle="bold"
+                                android:id="@+id/body_aches_text"
+                                />
+                            <RadioButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/body_aches_yes"
+                                android:hint="Yes"
+                                android:textColorHint="@android:color/holo_blue_dark"
+                                />
+
+                            <RadioButton
+                                android:textColorHint="@android:color/holo_blue_dark"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/body_aches_no"
+                                android:hint="No"
+                                />
+                        </RadioGroup>
+                        <RadioGroup
+                            android:layout_margin="10dp"
+                            android:id="@+id/recent_group"
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:padding="8dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Have you travelled recently in the Last 14 days?"
+                                android:textColor="@android:color/holo_blue_dark"
+                                android:textStyle="bold"
+                                android:id="@+id/recent_text"
+                                />
+                            <RadioButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/recent_yes"
+                                android:hint="Yes"
+                                android:textColorHint="@android:color/holo_blue_dark"
+                                />
+
+                            <RadioButton
+                                android:textColorHint="@android:color/holo_blue_dark"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/recent_no"
+                                android:hint="No"
+                                />
+                        </RadioGroup>
+                        <RadioGroup
+                            android:layout_margin="10dp"
+                            android:id="@+id/history_group"
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:padding="8dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Do you have a travel history to a COVID-19 Infected Area?"
+                                android:textColor="@android:color/holo_blue_dark"
+                                android:textStyle="bold"
+                                android:id="@+id/travel_history_text"
+                                />
+                            <RadioButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/history_yes"
+                                android:hint="Yes"
+                                android:textColorHint="@android:color/holo_blue_dark"
+                                />
+
+                            <RadioButton
+                                android:textColorHint="@android:color/holo_blue_dark"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/history_no"
+                                android:hint="No"
+                                />
+                        </RadioGroup>
+                        <RadioGroup
+                            android:layout_margin="10dp"
+                            android:id="@+id/direct_group"
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:padding="8dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Did you have direct contact or are taking care of a COVID-19 Patient?"
+                                android:textColor="@android:color/holo_blue_dark"
+                                android:textStyle="bold"
+                                android:id="@+id/direct_contact_text"
+                                />
+                            <RadioButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/direct_yes"
+                                android:hint="Yes"
+                                android:textColorHint="@android:color/holo_blue_dark"
+                                />
+
+                            <RadioButton
+                                android:textColorHint="@android:color/holo_blue_dark"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/direct_no"
+                                android:hint="No"
+                                />
+                        </RadioGroup>
+                    </LinearLayout>
+                </HorizontalScrollView>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_marginTop="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:hintTextColor="@color/black"
+                    android:hint="Name"
+                    android:background="@drawable/border_red"
+                    >
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textCapWords"
+                        android:textColor="@color/black"
+                        android:textAlignment="textStart"
+                        android:padding="5dp"
+                        android:id="@+id/test_name"
+                        />
+                </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    app:hintTextColor="@color/black"
+                    android:hint="Phone Number"
+                    android:background="@drawable/border_red"
+                    >
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="phone"
+                        android:textColor="@color/black"
+                        android:textAlignment="textStart"
+                        android:maxLength="11"
+                        android:padding="5dp"
+                        android:id="@+id/test_number"
+                        />
+                </com.google.android.material.textfield.TextInputLayout>
 
                 <LinearLayout
-                    android:layout_marginTop="100dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
+                    android:background="@drawable/border_red"
                     >
-                    <TextView
-                        android:layout_gravity="center"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/home_head1"
-                        android:textAlignment="center"
-                        android:gravity="center"
-                        android:textSize="22sp"
-                        android:textStyle="bold"
-                        android:text="Select The Symptoms You Are Having?"
-                        />
 
-                    <View
-                        android:layout_marginTop="5dp"
-                        android:layout_marginStart="15dp"
-                        android:layout_width="100dp"
-                        android:layout_gravity="center"
-                        android:layout_height="2dp"
-                        android:background="@android:color/black"
-                        />
-                    <View
-                        android:layout_gravity="center"
-                        android:layout_marginTop="3dp"
-                        android:layout_width="100dp"
-                        android:layout_height="2dp"
-                        android:background="@android:color/black"
-
-                        />
-                    <TextView
-                        android:layout_marginTop="10dp"
-                        android:layout_gravity="center"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/home_head2"
-                        android:textAlignment="center"
-                        android:gravity="center"
-                        android:textSize="18sp"
-                        android:textStyle="bold"
-                        android:text="Check the boxes that corresponds to your symptoms"
-                        />
-
-                    <View
-                        android:layout_gravity="center"
-                        android:layout_marginTop="3dp"
-                        android:layout_width="match_parent"
-                        android:layout_height="2dp"
-                        android:background="@android:color/black"/>
-
-                    <androidx.appcompat.widget.AppCompatCheckBox
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/have_dry_cough"
-                        android:text="Do You Have Dry Cough?"
-                        />
-                    <androidx.appcompat.widget.AppCompatCheckBox
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/have_cold"
-                        android:text="Do you have Cold?"
-                        />
-                    <androidx.appcompat.widget.AppCompatCheckBox
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/have_sore_throat"
-                        android:text="Do you have Sore Throat?"
-                        />
-                    <androidx.appcompat.widget.AppCompatCheckBox
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/have_diarrhea"
-                        android:text="Do you have Diarrhea?"
-                        />
-                    <androidx.appcompat.widget.AppCompatCheckBox
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/have_headache"
-                        android:text="Do you have a Head Ache?"
-                        />
-                    <androidx.appcompat.widget.AppCompatCheckBox
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/have_fatigue"
-                        android:text="Are you experiencing Fatigue?"
-                        />
-                    <androidx.appcompat.widget.AppCompatCheckBox
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/have_high_temp"
-                        android:text="Do you have Fever (Temp Above 38 degree celsuis)?"
-                        />
-                    <androidx.appcompat.widget.AppCompatCheckBox
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/have_difficult_breathing"
-                        android:text="Do you have Difficulty Breathing?"
-                        />
-                    <androidx.appcompat.widget.AppCompatCheckBox
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/have_body_aches"
-                        android:text="Do you have MYALGIA or Body Aches?"
-                        />
-                    <androidx.appcompat.widget.AppCompatCheckBox
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/have_traveled"
-                        android:text="Have you travelled recently in the Last 14 days?"
-                        />
-                    <androidx.appcompat.widget.AppCompatCheckBox
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/travel_history"
-                        android:text="Do you have a travel history to a COVID-19 Infected Area?"
-                        />
-                    <androidx.appcompat.widget.AppCompatCheckBox
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/direct_contact"
-                        android:text="Did you have direct contact or are taking care of a COVID-19 Patient?"
-                        />
-
-                    <Button
-                        android:layout_margin="20dp"
-                        android:id="@+id/submit_test"
-                        android:background="@drawable/background_red"
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:textSize="20sp"
-                        android:text="Submit Test"
-                        />
+                        android:orientation="horizontal"
+                        >
+                        <TextView
+                            android:layout_marginStart="10dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="State"
+                            android:textColor="@color/black"
+
+                            />
+                        <TextView
+                            android:layout_marginStart="140dp"
+                            android:layout_gravity="end"
+                            android:gravity="end"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="LGA"
+                            android:textColor="@color/black"
+
+                            />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        >
+                        <Spinner
+                            android:id="@+id/stateSpinner"
+                            android:layout_width="0dp"
+                            android:layout_height="50dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_weight="1" />
+
+                        <Spinner
+                            android:id="@+id/lgaSpinner"
+                            android:layout_width="0dp"
+                            android:layout_height="50dp"
+                            android:layout_weight="1" />
+                    </LinearLayout>
                 </LinearLayout>
-            </androidx.cardview.widget.CardView>
 
-        </ScrollView>
 
-    </fragment>
-</FrameLayout>
+                <Button
+                    android:layout_marginTop="20dp"
+                    android:id="@+id/submit_test"
+                    android:background="@drawable/background_red"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:textColor="@color/white"
+                    android:text="Submit Test"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="20dp"
+
+                    />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+    </ScrollView>
+
+</RelativeLayout>

@@ -51,8 +51,8 @@ public class ContactUs extends AppCompatActivity {
                 emailSelectorIntent.setData(Uri.parse("mailto:"));
 
                 final Intent emailIntent = new Intent(Intent.ACTION_SEND);
-                emailIntent.putExtra(Intent.EXTRA_EMAIL, new String[]{"services.pandemicaid@gmail.com"});
-                emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Contacting You From COVID-19 App");
+                emailIntent.putExtra(Intent.EXTRA_EMAIL, new String[]{"gnorizonconsults@gmail.com"});
+                emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Contacting You From PandemicAid App");
                 emailIntent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
                 emailIntent.addFlags(Intent.FLAG_GRANT_WRITE_URI_PERMISSION);
                 emailIntent.setSelector( emailSelectorIntent );
@@ -63,5 +63,8 @@ public class ContactUs extends AppCompatActivity {
         });
 
     }
+
+
+
 
 }

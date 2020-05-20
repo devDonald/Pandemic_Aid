@@ -6,7 +6,7 @@
     <string name="nav_report_a_case">Report a Case</string>
     <string name="nav_high_risk_areas">High Risk Areas</string>
     <string name="nav_see_a_doctor">See a Doctor</string>
-    <string name="nav_contact_channels">Contact Channels</string>
+    <string name="nav_contact_channels">NCDC Contact Channels</string>
     <string name="drawer_open">Open navigation drawer</string>
     <string name="drawer_close">Close navigation drawer</string>
 
@@ -26,9 +26,10 @@
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="title_activity_report_a_case">Report A Case</string>
+    <string name="text_assignment">GNORIZON CONSULTS \n We specialize in providing technological solutions, tailor suited to our client’s needs, our solutions span, web development, mobile app development, media team setup and training, network infrastructure design and development, Internet services provision, branding, graphics design and printing services, training and research, amongst others.</string>
 
     <string-array name="soo">
-        <item>State of Origin</item>
+        <item>Select State</item>
         <item> Abia</item>
         <item> Adamawa</item>
         <item>Akwa Ibom </item>

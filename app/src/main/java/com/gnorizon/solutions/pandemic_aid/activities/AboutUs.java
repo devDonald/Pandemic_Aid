@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.Dialog;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -64,6 +66,15 @@ public class AboutUs extends AppCompatActivity {
         header.add("Who we Are");
         header.add("What we do");
 
+        child2.add("IT CONSULTING");
+        child2.add("SOFTWARE DEVELOPMENT");
+        child2.add("NETWORK DESIGN");
+        child2.add("CREATION OF BRANDS");
+
+
+        child1.add(getString(R.string.text_assignment));
+
+
         // Adding header and childs to hash map
         hashMap.put(header.get(0), child1);
         hashMap.put(header.get(1), child2);
@@ -113,7 +124,27 @@ public class AboutUs extends AppCompatActivity {
             @Override
             public boolean onChildClick(ExpandableListView listview, View view,
                                         int groupPos, int childPos, long id) {
-                if (groupPos==0){
+                if(groupPos==1 && childPos==0){
+
+                    showPopup(R.layout.about_consulting);
+                }
+                if (groupPos==1 && childPos==1){
+
+                    showPopup(R.layout.about_software);
+
+                }
+
+                if(groupPos==1 && childPos==2){
+
+                    showPopup(R.layout.about_network);
+
+
+                }
+
+                if(groupPos==1 && childPos==3){
+
+                    showPopup(R.layout.about_brand);
+
 
                 }
 
@@ -124,20 +155,20 @@ public class AboutUs extends AppCompatActivity {
     }
 
 
-//    public void showPopup(int view) {
-//        TextView txtclose;
-//        popDialog.setContentView(view);
-//        txtclose =popDialog.findViewById(R.id.txtclose);
-//        txtclose.setText("X");
-//        txtclose.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                popDialog.dismiss();
-//            }
-//        });
-//        popDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-//        popDialog.show();
-//    }
+    public void showPopup(int view) {
+        TextView txtclose;
+        popDialog.setContentView(view);
+        txtclose =popDialog.findViewById(R.id.txtclose);
+        txtclose.setText("X");
+        txtclose.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                popDialog.dismiss();
+            }
+        });
+        popDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        popDialog.show();
+    }
 
 
     @Override

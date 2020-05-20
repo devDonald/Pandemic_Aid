@@ -53,6 +53,9 @@
         <activity
             android:name=".activities.AboutUs"
             android:label="About Us" />
+        <activity android:name=".fragment.ContactChannels"
+            android:label="NCDC Contact Channels"
+            />
     </application>
 
 </manifest>

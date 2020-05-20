@@ -26,6 +26,8 @@
                 android:id="@+id/home_head1"
                 android:textSize="25sp"
                 android:textStyle="bold"
+                android:textColor="@color/black"
+                android:fontFamily="sans-serif"
                 android:text="How Can We Help You?"
                 />
 
@@ -51,6 +53,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/home_head2"
                 android:textSize="18sp"
+                android:fontFamily="casual"
                 android:textStyle="bold"
                 android:text="Pick a Category that relates to you"
                 />
@@ -59,8 +62,9 @@
         <LinearLayout
             android:layout_below="@id/lay0"
             android:id="@+id/lay1"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="40dp"
             android:orientation="vertical"
-            android:layout_margin="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
 
@@ -80,27 +84,18 @@
                     android:orientation="vertical"
                     android:background="@color/colorPrimaryDark"
                     >
-                    <TextView
-                        android:layout_marginTop="10dp"
+
+                    <ImageView
+                        android:layout_width="107dp"
+                        android:layout_height="103dp"
                         android:layout_gravity="center_horizontal"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="17sp"
+                        android:layout_marginTop="10dp"
                         android:padding="3dp"
-                        android:textStyle="bold"
+                        android:src="@drawable/test"
                         android:textColor="@android:color/white"
-                        android:text="I am Having Symptoms of COVID-19"
-                        />
-                    <TextView
-                        android:layout_marginTop="10dp"
-                        android:layout_gravity="center_horizontal"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="16sp"
-                        android:textStyle="bold|italic"
-                        android:textColor="@android:color/white"
-                        android:text="I suspect i may already be infected"
-                        />
+                        android:textSize="17sp"
+                        android:textStyle="bold" />
+
 
                     <Button
                         android:layout_marginTop="15dp"
@@ -110,10 +105,10 @@
                         android:layout_height="wrap_content"
                         android:textSize="16sp"
                         android:textStyle="bold"
-                        android:textColor="@android:color/white"
+                        android:textColor="@color/black"
                         android:id="@+id/take_test"
                         android:ems="8"
-                        android:background="@drawable/background_red"
+                        android:background="@drawable/background_yellow"
                         android:text="Get Tested"
                         />
                 </LinearLayout>
@@ -122,9 +117,10 @@
         </LinearLayout>
 
         <LinearLayout
-            android:layout_margin="10dp"
             android:id="@+id/lay2"
             android:layout_below="@id/lay1"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="40dp"
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -144,26 +140,16 @@
                     android:orientation="vertical"
                     android:background="@color/colorPrimaryDark"
                     >
-                    <TextView
-                        android:layout_marginTop="10dp"
+
+                    <ImageView
+                        android:layout_width="107dp"
+                        android:layout_height="98dp"
                         android:layout_gravity="center_horizontal"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="18sp"
-                        android:textStyle="bold"
+                        android:layout_marginTop="10dp"
+                        android:src="@drawable/infected"
                         android:textColor="@android:color/white"
-                        android:text="I want to report a suspected Case"
-                        />
-                    <TextView
-                        android:layout_marginTop="10dp"
-                        android:layout_gravity="center_horizontal"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
                         android:textSize="16sp"
-                        android:textStyle="bold|italic"
-                        android:textColor="@android:color/white"
-                        android:text="Tell us what you have observed"
-                        />
+                        android:textStyle="bold|italic" />
 
                     <Button
                         android:layout_marginTop="15dp"
@@ -173,11 +159,11 @@
                         android:textSize="16sp"
                         android:textStyle="bold"
                         android:padding="5dp"
-                        android:textColor="@android:color/white"
+                        android:textColor="@color/black"
                         android:id="@+id/report_case"
                         android:ems="8"
-                        android:background="@drawable/background_red"
-                        android:text="Report Case"
+                        android:background="@drawable/background_yellow"
+                        android:text="Report A Case"
                         />
                 </LinearLayout>
 
