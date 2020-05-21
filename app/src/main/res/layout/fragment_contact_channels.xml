@@ -36,7 +36,7 @@
                 android:orientation="vertical"
                 >
                 <Button
-                    android:background="@drawable/border_red"
+                    android:background="@drawable/border_black"
                     android:drawableStart="@drawable/phone_circle"
                     android:text=" PHONE CALL"
                     android:layout_gravity="center_horizontal"
@@ -48,7 +48,7 @@
 
 
                 <Button
-                    android:background="@drawable/border_red"
+                    android:background="@drawable/border_black"
                     android:id="@+id/sms_ncdc"
                     android:text="TEXT MESSAGE"
                     android:layout_gravity="center_horizontal"
@@ -59,7 +59,7 @@
 
 
                 <Button
-                    android:background="@drawable/border_red"
+                    android:background="@drawable/border_black"
                     android:id="@+id/whatsapp_ncdc"
                     android:text="Whatsapp"
                     android:layout_width="wrap_content"

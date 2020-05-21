@@ -12,7 +12,7 @@
         android:layout_height="match_parent"
         >
         <ScrollView
-            android:background="@drawable/border_red"
+            android:background="@drawable/border_black"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             >
@@ -47,14 +47,14 @@
                         android:layout_width="100dp"
                         android:layout_gravity="center"
                         android:layout_height="2dp"
-                        android:background="@android:color/black"
+                        android:background="@android:color/holo_red_dark"
                         />
                     <View
                         android:layout_gravity="center"
                         android:layout_marginTop="3dp"
                         android:layout_width="100dp"
                         android:layout_height="2dp"
-                        android:background="@android:color/black"
+                        android:background="@android:color/holo_red_dark"
 
                         />
                     <TextView
@@ -65,11 +65,9 @@
                         android:id="@+id/home_head2"
                         android:textAlignment="center"
                         android:gravity="center"
-                        android:textColor="@color/black"
                         android:textSize="18sp"
                         android:textStyle="bold"
-                        android:fontFamily="casual"
-                        android:text="For Reports, enquiries and questions"
+                        android:text="Report a Suspected COVID-19 Case"
                         />
 
                     <View
@@ -81,7 +79,7 @@
                         android:background="@android:color/black"/>
 
                     <com.google.android.material.textfield.TextInputLayout
-                        android:background="@drawable/border_red"
+                        android:background="@drawable/border_black"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
@@ -99,7 +97,7 @@
                             />
                     </com.google.android.material.textfield.TextInputLayout>
                     <com.google.android.material.textfield.TextInputLayout
-                        android:background="@drawable/border_red"
+                        android:background="@drawable/border_black"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
@@ -118,7 +116,7 @@
                             />
                     </com.google.android.material.textfield.TextInputLayout>
                     <com.google.android.material.textfield.TextInputLayout
-                        android:background="@drawable/border_red"
+                        android:background="@drawable/border_black"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
@@ -138,7 +136,7 @@
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <LinearLayout
-                        android:background="@drawable/border_red"
+                        android:background="@drawable/border_black"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
@@ -176,19 +174,21 @@
                                 android:id="@+id/stateSpinner1"
                                 android:layout_width="0dp"
                                 android:layout_height="50dp"
+                                android:outlineSpotShadowColor="@color/black"
                                 android:layout_marginEnd="8dp"
                                 android:layout_weight="1" />
 
                             <Spinner
                                 android:id="@+id/lgaSpinner1"
                                 android:layout_width="0dp"
+                                android:outlineSpotShadowColor="@color/black"
                                 android:layout_height="50dp"
                                 android:layout_weight="1" />
                         </LinearLayout>
                     </LinearLayout>
 
                    <HorizontalScrollView
-                       android:background="@drawable/border_red"
+                       android:background="@drawable/border_black"
                        android:layout_width="match_parent"
                        android:layout_height="wrap_content"
                        android:scrollbars="horizontal"
@@ -208,8 +208,8 @@
                                    android:padding="8dp"
                                    android:layout_width="wrap_content"
                                    android:layout_height="wrap_content"
-                                   android:text="Do they have Soar Throat?"
-                                   android:textColor="@android:color/holo_blue_dark"
+                                   android:text="Do they have Sore Throat?"
+                                   android:textColor="@android:color/black"
                                    android:textStyle="bold"
                                    android:id="@+id/rsoar_text"
                                    />
@@ -218,11 +218,11 @@
                                    android:layout_height="wrap_content"
                                    android:id="@+id/rsoar_yes"
                                    android:hint="Yes"
-                                   android:textColorHint="@android:color/holo_blue_dark"
+                                   android:textColorHint="@android:color/black"
                                    />
 
                                <RadioButton
-                                   android:textColorHint="@android:color/holo_blue_dark"
+                                   android:textColorHint="@android:color/black"
                                    android:layout_width="wrap_content"
                                    android:layout_height="wrap_content"
                                    android:id="@+id/rsoar_no"
@@ -241,7 +241,7 @@
                                    android:layout_width="wrap_content"
                                    android:layout_height="wrap_content"
                                    android:text="Do they have Dry Cough?"
-                                   android:textColor="@android:color/holo_blue_dark"
+                                   android:textColor="@android:color/black"
                                    android:textStyle="bold"
                                    android:id="@+id/rcough_text"
                                    />
@@ -250,11 +250,11 @@
                                    android:layout_height="wrap_content"
                                    android:id="@+id/rcough_yes"
                                    android:hint="Yes"
-                                   android:textColorHint="@android:color/holo_blue_dark"
+                                   android:textColorHint="@android:color/black"
                                    />
 
                                <RadioButton
-                                   android:textColorHint="@android:color/holo_blue_dark"
+                                   android:textColorHint="@android:color/black"
                                    android:layout_width="wrap_content"
                                    android:layout_height="wrap_content"
                                    android:id="@+id/rcough_no"
@@ -272,8 +272,8 @@
                                    android:padding="8dp"
                                    android:layout_width="wrap_content"
                                    android:layout_height="wrap_content"
-                                   android:text="Have you travelled recently in the Last 14 days?"
-                                   android:textColor="@android:color/holo_blue_dark"
+                                   android:text="Have they travelled recently in the Last 14 days?"
+                                   android:textColor="@android:color/black"
                                    android:textStyle="bold"
                                    android:id="@+id/rrecent_text"
                                    />
@@ -282,11 +282,11 @@
                                    android:layout_height="wrap_content"
                                    android:id="@+id/rrecent_yes"
                                    android:hint="Yes"
-                                   android:textColorHint="@android:color/holo_blue_dark"
+                                   android:textColorHint="@android:color/black"
                                    />
 
                                <RadioButton
-                                   android:textColorHint="@android:color/holo_blue_dark"
+                                   android:textColorHint="@android:color/black"
                                    android:layout_width="wrap_content"
                                    android:layout_height="wrap_content"
                                    android:id="@+id/rrecent_no"
@@ -304,8 +304,8 @@
                                    android:padding="8dp"
                                    android:layout_width="wrap_content"
                                    android:layout_height="wrap_content"
-                                   android:text="Do you have a travel history to a COVID-19 Infected Area?"
-                                   android:textColor="@android:color/holo_blue_dark"
+                                   android:text="Did they have a travel history to a COVID-19 Infected Area?"
+                                   android:textColor="@android:color/black"
                                    android:textStyle="bold"
                                    android:id="@+id/rtravel_history_text"
                                    />
@@ -314,11 +314,11 @@
                                    android:layout_height="wrap_content"
                                    android:id="@+id/rhistory_yes"
                                    android:hint="Yes"
-                                   android:textColorHint="@android:color/holo_blue_dark"
+                                   android:textColorHint="@android:color/black"
                                    />
 
                                <RadioButton
-                                   android:textColorHint="@android:color/holo_blue_dark"
+                                   android:textColorHint="@android:color/black"
                                    android:layout_width="wrap_content"
                                    android:layout_height="wrap_content"
                                    android:id="@+id/rhistory_no"
@@ -336,8 +336,8 @@
                                    android:padding="8dp"
                                    android:layout_width="wrap_content"
                                    android:layout_height="wrap_content"
-                                   android:text="Did you have direct contact or are taking care of a COVID-19 Patient?"
-                                   android:textColor="@android:color/holo_blue_dark"
+                                   android:text="Did they have direct contact or are taking care of a COVID-19 Patient?"
+                                   android:textColor="@android:color/black"
                                    android:textStyle="bold"
                                    android:id="@+id/rdirect_contact_text"
                                    />
@@ -346,11 +346,11 @@
                                    android:layout_height="wrap_content"
                                    android:id="@+id/rdirect_yes"
                                    android:hint="Yes"
-                                   android:textColorHint="@android:color/holo_blue_dark"
+                                   android:textColorHint="@android:color/black"
                                    />
 
                                <RadioButton
-                                   android:textColorHint="@android:color/holo_blue_dark"
+                                   android:textColorHint="@android:color/black"
                                    android:layout_width="wrap_content"
                                    android:layout_height="wrap_content"
                                    android:id="@+id/rdirect_no"

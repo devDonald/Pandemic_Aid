@@ -27,7 +27,6 @@ public class AboutUs extends AppCompatActivity {
     private ExpandableListAdapter adapter;
     private AppCompatActivity activity;
     private Dialog popDialog;
-    private Double longitude, latitude;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

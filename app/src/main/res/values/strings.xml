@@ -5,68 +5,71 @@
     <string name="nav_take_a_test">Take a Test</string>
     <string name="nav_report_a_case">Report a Case</string>
     <string name="nav_high_risk_areas">High Risk Areas</string>
-    <string name="nav_see_a_doctor">See a Doctor</string>
     <string name="nav_contact_channels">NCDC Contact Channels</string>
     <string name="drawer_open">Open navigation drawer</string>
     <string name="drawer_close">Close navigation drawer</string>
 
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="nav_contact_us">Contact Us</string>
     <string name="nav_about_us">About Us</string>
     <string name="nav_share_app">Share App</string>
-    <string name="title_activity_my_location_map">Map</string>
     <string name="title_activity_take_test">Take Test</string>
     <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">First Fragment</string>
-    <string name="second_fragment_label">Second Fragment</string>
-    <string name="next">Next</string>
-    <string name="previous">Previous</string>
 
-    <string name="hello_first_fragment">Hello first fragment</string>
-    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="title_activity_report_a_case">Report A Case</string>
     <string name="text_assignment">GNORIZON CONSULTS \n We specialize in providing technological solutions, tailor suited to our client’s needs, our solutions span, web development, mobile app development, media team setup and training, network infrastructure design and development, Internet services provision, branding, graphics design and printing services, training and research, amongst others.</string>
+    <string name="nav_meet_doctor">Speak to a Doctor</string>
+    <string name="overview">
+        Coronavirus disease (COVID-19) is an infectious disease caused by a newly discovered coronavirus.\n\n
 
-    <string-array name="soo">
-        <item>Select State</item>
-        <item> Abia</item>
-        <item> Adamawa</item>
-        <item>Akwa Ibom </item>
-        <item>Anambra </item>
-        <item> Bauchi</item>
-        <item> Bayelsa</item>
-        <item> Benue</item>
-        <item>  Borno</item>
-        <item> Cross River</item>
-        <item> Delta</item>
-        <item>  Ebonyi</item>
-        <item> Enugu</item>
-        <item>Edo </item>
-        <item>Ekiti </item>
-        <item>Gombe </item>
-        <item>Imo</item>
-        <item>Jigawa </item>
-        <item> Kaduna</item>
-        <item>Kano </item>
-        <item>Katsina </item>
-        <item>Kebbi</item>
-        <item>Kogi</item>
-        <item>Kwara</item>
-        <item>Lagos</item>
-        <item>Nasarawa</item>
-        <item>Niger</item>
-        <item>Ogun </item>
-        <item>Ondo</item>
-        <item>Osun</item>
-        <item>Oyo</item>
-        <item>Plateau</item>
-        <item>Rivers </item>
-        <item>Sokoto</item>
-        <item>Taraba</item>
-        <item>Yobe </item>
-        <item>Zamfara </item>
-        <item>FCT</item>
-    </string-array>
+Most people infected with the COVID-19 virus will experience mild to moderate respiratory illness and recover without requiring special treatment.  Older people, and those with underlying medical problems like cardiovascular disease, diabetes, chronic respiratory disease, and cancer are more likely to develop serious illness.\n\n
+
+The best way to prevent and slow down transmission is be well informed about the COVID-19 virus, the disease it causes and how it spreads. Protect yourself and others from infection by washing your hands or using an alcohol based rub frequently and not touching your face. \n\n
+
+The COVID-19 virus spreads primarily through droplets of saliva or discharge from the nose when an infected person coughs or sneezes, so it’s important that you also practice respiratory etiquette (for example, by coughing into a flexed elbow).\n\n
+
+At this time, there are no specific vaccines or treatments for COVID-19. However, there are many ongoing clinical trials evaluating potential treatments. WHO will continue to provide updated information as soon as clinical findings become available.\n\n
+    </string>
+    <string name="symptoms">
+        COVID-19 affects different people in different ways. Most infected people will develop mild to moderate illness and recover without hospitalization.\n\n\n
+
+        MOST COMMON SYMPTOMS:\n
+
+        1. fever.\n
+        2. dry cough.\n
+        3. tiredness.\n\n
+
+        LESS COMMON SYMPTOMS\n
+
+        1. aches and pains.\n
+        2. sore throat.\n
+        3. diarrhoea.\n
+        4. conjunctivitis.\n
+        5. headache.\n
+        6. loss of taste or smell.\n
+        7. a rash on skin, or discolouration of fingers or toes.\n\n\n
+
+        SERIOUS SYMPTOMS:\n
+
+        1. difficulty breathing or shortness of breath.\n
+        2. chest pain or pressure.\n
+        3. loss of speech or movement.\n\n
+        Seek immediate medical attention if you have serious symptoms.  Always call before visiting your doctor or health facility. \n\n
+
+        People with mild symptoms who are otherwise healthy should manage their symptoms at home. \n\n
+
+        On average it takes 5–6 days from when someone is infected with the virus for symptoms to show, however it can take up to 14 days.\n
+    </string>
+    <string name="prevention">
+To prevent infection and to slow transmission of COVID-19, do the following:\n\n
+
+a. Wash your hands regularly with soap and water, or clean them with alcohol-based hand rub.\n\n
+b. Maintain at least 1 metre distance between you and people coughing or sneezing.\n\n
+c. Avoid touching your face.\n\n
+d. Cover your mouth and nose when coughing or sneezing.\n\n
+e. Stay home if you feel unwell.\n\n
+f. Refrain from smoking and other activities that weaken the lungs.\n\n
+g. Practice physical distancing by avoiding unnecessary travel and staying away from large groups of people.\n\n
+    </string>
 
 </resources>

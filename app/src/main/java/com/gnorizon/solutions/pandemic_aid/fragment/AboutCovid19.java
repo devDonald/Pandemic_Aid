@@ -1,11 +1,15 @@
 package com.gnorizon.solutions.pandemic_aid.fragment;
 
+import android.app.Dialog;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -15,10 +19,17 @@ import android.webkit.DownloadListener;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.ExpandableListView;
+import android.widget.TextView;
 
 import com.gnorizon.solutions.pandemic_aid.R;
 import com.gnorizon.solutions.pandemic_aid.activities.MainActivity;
+import com.gnorizon.solutions.pandemic_aid.helpers.ExpandableListAdapter;
 import com.kaopiz.kprogresshud.KProgressHUD;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -27,6 +38,10 @@ public class AboutCovid19 extends Fragment {
     private View aboutView;
     private WebView webView;
     private KProgressHUD hud;
+    private static ExpandableListView expandableListView;
+    private ExpandableListAdapter adapter;
+    private Context activity;
+    private Dialog popDialog;
 
     public AboutCovid19() {
         // Required empty public constructor
@@ -38,74 +53,105 @@ public class AboutCovid19 extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         aboutView = inflater.inflate(R.layout.fragment_about_covid19, container, false);
-        webView = (WebView) aboutView.findViewById(R.id.webview_about_covid);
 
-        hud = KProgressHUD.create(getContext())
-                .setStyle(KProgressHUD.Style.SPIN_INDETERMINATE)
-                .setLabel("Please wait")
-                .setDetailsLabel("Loading High Risk Areas...")
-                .setCancellable(true)
-                .setAnimationSpeed(2)
-                .setDimAmount(0.5f)
-                .setBackgroundColor(Color.BLACK)
-                .setAutoDismiss(true);
+        popDialog = new Dialog(getContext());
 
+        expandableListView =
+                (ExpandableListView) aboutView.findViewById(R.id.list_viewEp1);
+        // Setting group indicator null for custom indicator
+        expandableListView.setGroupIndicator(null);
 
-        webView.setWebViewClient(new MyWebViewClient());
+        setItems();
+        setListener();
 
-        String url = "https://www.eportcovid19.org/about";
-
-        webView.getSettings().setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK);
-        webView.loadUrl(url);
-
-        webView.loadUrl("https://www.reportcovid19.org/about");
-
-
-        //webView.getSettings().setJavaScriptEnabled(true); // enable javascript
-
-        webView.getSettings().setLoadWithOverviewMode(true);
-        webView.getSettings().setUseWideViewPort(true);
-        webView.getSettings().setBuiltInZoomControls(true);
-
-
-        // Force links and redirects to open in the WebView instead of in a browser
-
-        webView.setDownloadListener(new DownloadListener() {
-            public void onDownloadStart(String url, String userAgent,
-                                        String contentDisposition, String mimetype,
-                                        long contentLength) {
-                Intent i = new Intent(Intent.ACTION_VIEW);
-                i.setData(Uri.parse(url));
-                startActivity(i);
-            }
-        });
         return aboutView;
 
 
     }
 
-    private class MyWebViewClient extends WebViewClient {
+    // Setting headers and childs to expandable listview
+    void setItems() {
 
-        @Override
-        public boolean shouldOverrideUrlLoading(WebView view, String url) {
-            view.loadUrl(url);
-            return true;
-        }
+        // Array list for header
+        ArrayList<String> header = new ArrayList<String>();
 
-        @Override
-        public void onPageStarted(WebView view, String url, Bitmap favicon) {
-            super.onPageStarted(view, url, favicon);
-            hud.show();
-        }
+        // Array list for child items
+        List<String> child1 = new ArrayList<String>();
+        List<String> child2 = new ArrayList<String>();
+        List<String> child3 = new ArrayList<String>();
 
-        @Override
-        public void onPageFinished(WebView view, String url) {
-            super.onPageFinished(view, url);
-            if(hud!=null){
-                hud.dismiss();
-            }
-        }
+        // Hash map for both header and child
+        HashMap<String, List<String>> hashMap = new HashMap<String, List<String>>();
+
+        // Adding headers to list
+
+        header.add("Overview");
+        header.add("Symptoms");
+        header.add("Prevention");
+
+        child1.add(getString(R.string.overview));
+        child2.add(getString(R.string.symptoms));
+        child3.add(getString(R.string.prevention));
+
+        // Adding header and childs to hash map
+        hashMap.put(header.get(0), child1);
+        hashMap.put(header.get(1), child2);
+        hashMap.put(header.get(2), child3);
+
+
+        adapter = new ExpandableListAdapter(getContext(), header, hashMap);
+
+        // Setting adpater over expandablelistview
+        expandableListView.setAdapter(adapter);
     }
+
+    // Setting different listeners to expandablelistview
+    void setListener() {
+
+        // This listener will show toast on group click
+        expandableListView.setOnGroupClickListener(new ExpandableListView.OnGroupClickListener() {
+
+            @Override
+            public boolean onGroupClick(ExpandableListView listview, View view,
+                                        int group_pos, long id) {
+
+                return false;
+            }
+        });
+
+        // This listener will expand one group at one time
+        // You can remove this listener for expanding all groups
+        expandableListView
+                .setOnGroupExpandListener(new ExpandableListView.OnGroupExpandListener() {
+
+                    // Default position
+                    int previousGroup = -1;
+
+                    @Override
+                    public void onGroupExpand(int groupPosition) {
+                        if (groupPosition != previousGroup)
+
+                            // Collapse the expanded group
+                            expandableListView.collapseGroup(previousGroup);
+                        previousGroup = groupPosition;
+                    }
+
+                });
+
+        // This listener will show toast on child click
+        expandableListView.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
+
+            @Override
+            public boolean onChildClick(ExpandableListView listview, View view,
+                                        int groupPos, int childPos, long id) {
+
+
+                return false;
+            }
+        });
+    }
+
+
 
     @Override
     public void onResume(){

@@ -13,6 +13,7 @@ import com.gnorizon.solutions.pandemic_aid.fragment.AboutCovid19;
 import com.gnorizon.solutions.pandemic_aid.fragment.ContactChannels;
 import com.gnorizon.solutions.pandemic_aid.fragment.HighRiskAreas;
 import com.gnorizon.solutions.pandemic_aid.fragment.Home;
+import com.gnorizon.solutions.pandemic_aid.fragment.SeeDoctor;
 import com.google.android.material.navigation.NavigationView;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
@@ -101,6 +102,11 @@ public class MainActivity extends AppCompatActivity
             case R.id.nav_high_risk:
                 fragmentClass = HighRiskAreas.class;
                 getSupportActionBar().setTitle("High Risk Areas");
+                break;
+
+            case R.id.nav_meet_doctor:
+                fragmentClass = SeeDoctor.class;
+                getSupportActionBar().setTitle("Speak to a Doctor");
                 break;
             case R.id.nav_report:
                 Intent report = new Intent(MainActivity.this, ReportACase.class);

@@ -15,7 +15,7 @@
     </fragment>
     <ScrollView
         android:layout_alignParentTop="true"
-        android:background="@drawable/border_red"
+        android:background="@drawable/border_black"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         >
@@ -51,14 +51,14 @@
                     android:layout_width="100dp"
                     android:layout_gravity="center"
                     android:layout_height="2dp"
-                    android:background="@android:color/black"
+                    android:background="@android:color/holo_red_dark"
                     />
                 <View
                     android:layout_gravity="center"
                     android:layout_marginTop="3dp"
                     android:layout_width="100dp"
                     android:layout_height="2dp"
-                    android:background="@android:color/black"
+                    android:background="@android:color/holo_red_dark"
 
                     />
                 <TextView
@@ -71,8 +71,6 @@
                     android:gravity="center"
                     android:textSize="18sp"
                     android:textStyle="bold"
-                    android:textColor="@color/black"
-                    android:fontFamily="casual"
                     android:text="Check the boxes that corresponds to your symptoms"
                     />
 
@@ -83,7 +81,7 @@
                     android:layout_height="2dp"
                     android:background="@android:color/black"/>
                 <HorizontalScrollView
-                    android:background="@drawable/border_red"
+                    android:background="@drawable/border_black"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:scrollbars="horizontal">
@@ -103,7 +101,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Do You Have Dry Cough?"
-                                android:textColor="@android:color/holo_blue_dark"
+                                android:textColor="@android:color/black"
                                 android:textStyle="bold"
                                 android:id="@+id/dry_cough_text"
                                 />
@@ -112,11 +110,11 @@
                                 android:layout_height="wrap_content"
                                 android:id="@+id/dry_cough_yes"
                                 android:hint="Yes"
-                                android:textColorHint="@android:color/holo_blue_dark"
+                                android:textColorHint="@android:color/black"
                                 />
 
                             <RadioButton
-                                android:textColorHint="@android:color/holo_blue_dark"
+                                android:textColorHint="@android:color/black"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:id="@+id/dry_cough_no"
@@ -135,7 +133,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Do you have Cold?"
-                                android:textColor="@android:color/holo_blue_dark"
+                                android:textColor="@android:color/black"
                                 android:textStyle="bold"
                                 android:id="@+id/cold_text"
                                 />
@@ -144,11 +142,11 @@
                                 android:layout_height="wrap_content"
                                 android:id="@+id/cold_yes"
                                 android:hint="Yes"
-                                android:textColorHint="@android:color/holo_blue_dark"
+                                android:textColorHint="@android:color/black"
                                 />
 
                             <RadioButton
-                                android:textColorHint="@android:color/holo_blue_dark"
+                                android:textColorHint="@android:color/black"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:id="@+id/cold_no"
@@ -167,7 +165,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Do you have Sore Throat?"
-                                android:textColor="@android:color/holo_blue_dark"
+                                android:textColor="@android:color/black"
                                 android:textStyle="bold"
                                 android:id="@+id/sore_text"
                                 />
@@ -176,11 +174,11 @@
                                 android:layout_height="wrap_content"
                                 android:id="@+id/sore_yes"
                                 android:hint="Yes"
-                                android:textColorHint="@android:color/holo_blue_dark"
+                                android:textColorHint="@android:color/black"
                                 />
 
                             <RadioButton
-                                android:textColorHint="@android:color/holo_blue_dark"
+                                android:textColorHint="@android:color/black"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:id="@+id/sore_no"
@@ -199,7 +197,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Do you have Diarrhea?"
-                                android:textColor="@android:color/holo_blue_dark"
+                                android:textColor="@android:color/black"
                                 android:textStyle="bold"
                                 android:id="@+id/diarrhea_text"
                                 />
@@ -208,11 +206,11 @@
                                 android:layout_height="wrap_content"
                                 android:id="@+id/diarrhea_yes"
                                 android:hint="Yes"
-                                android:textColorHint="@android:color/holo_blue_dark"
+                                android:textColorHint="@android:color/black"
                                 />
 
                             <RadioButton
-                                android:textColorHint="@android:color/holo_blue_dark"
+                                android:textColorHint="@android:color/black"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:id="@+id/diarrhea_no"
@@ -231,7 +229,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Do you have a Head Ache?"
-                                android:textColor="@android:color/holo_blue_dark"
+                                android:textColor="@android:color/black"
                                 android:textStyle="bold"
                                 android:id="@+id/aches_text"
                                 />
@@ -240,11 +238,11 @@
                                 android:layout_height="wrap_content"
                                 android:id="@+id/aches_yes"
                                 android:hint="Yes"
-                                android:textColorHint="@android:color/holo_blue_dark"
+                                android:textColorHint="@android:color/black"
                                 />
 
                             <RadioButton
-                                android:textColorHint="@android:color/holo_blue_dark"
+                                android:textColorHint="@android:color/black"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:id="@+id/aches_no"
@@ -263,7 +261,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Are you experiencing Fatigue?"
-                                android:textColor="@android:color/holo_blue_dark"
+                                android:textColor="@android:color/black"
                                 android:textStyle="bold"
                                 android:id="@+id/fatigue_text"
                                 />
@@ -272,11 +270,11 @@
                                 android:layout_height="wrap_content"
                                 android:id="@+id/fatigue_yes"
                                 android:hint="Yes"
-                                android:textColorHint="@android:color/holo_blue_dark"
+                                android:textColorHint="@android:color/black"
                                 />
 
                             <RadioButton
-                                android:textColorHint="@android:color/holo_blue_dark"
+                                android:textColorHint="@android:color/black"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:id="@+id/fatigue_no"
@@ -295,7 +293,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Do you have Fever (Temp Above 38 degree celsuis)?"
-                                android:textColor="@android:color/holo_blue_dark"
+                                android:textColor="@android:color/black"
                                 android:textStyle="bold"
                                 android:id="@+id/fever_text"
                                 />
@@ -304,11 +302,11 @@
                                 android:layout_height="wrap_content"
                                 android:id="@+id/fever_yes"
                                 android:hint="Yes"
-                                android:textColorHint="@android:color/holo_blue_dark"
+                                android:textColorHint="@android:color/black"
                                 />
 
                             <RadioButton
-                                android:textColorHint="@android:color/holo_blue_dark"
+                                android:textColorHint="@android:color/black"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:id="@+id/fever_no"
@@ -327,7 +325,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Do you have Difficulty Breathing?"
-                                android:textColor="@android:color/holo_blue_dark"
+                                android:textColor="@android:color/black"
                                 android:textStyle="bold"
                                 android:id="@+id/difficult_text"
                                 />
@@ -336,11 +334,11 @@
                                 android:layout_height="wrap_content"
                                 android:id="@+id/difficult_yes"
                                 android:hint="Yes"
-                                android:textColorHint="@android:color/holo_blue_dark"
+                                android:textColorHint="@android:color/black"
                                 />
 
                             <RadioButton
-                                android:textColorHint="@android:color/holo_blue_dark"
+                                android:textColorHint="@android:color/black"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:id="@+id/difficult_no"
@@ -359,7 +357,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Do you have MYALGIA or Body Aches?"
-                                android:textColor="@android:color/holo_blue_dark"
+                                android:textColor="@android:color/black"
                                 android:textStyle="bold"
                                 android:id="@+id/body_aches_text"
                                 />
@@ -368,11 +366,11 @@
                                 android:layout_height="wrap_content"
                                 android:id="@+id/body_aches_yes"
                                 android:hint="Yes"
-                                android:textColorHint="@android:color/holo_blue_dark"
+                                android:textColorHint="@android:color/black"
                                 />
 
                             <RadioButton
-                                android:textColorHint="@android:color/holo_blue_dark"
+                                android:textColorHint="@android:color/black"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:id="@+id/body_aches_no"
@@ -391,7 +389,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Have you travelled recently in the Last 14 days?"
-                                android:textColor="@android:color/holo_blue_dark"
+                                android:textColor="@android:color/black"
                                 android:textStyle="bold"
                                 android:id="@+id/recent_text"
                                 />
@@ -400,11 +398,11 @@
                                 android:layout_height="wrap_content"
                                 android:id="@+id/recent_yes"
                                 android:hint="Yes"
-                                android:textColorHint="@android:color/holo_blue_dark"
+                                android:textColorHint="@android:color/black"
                                 />
 
                             <RadioButton
-                                android:textColorHint="@android:color/holo_blue_dark"
+                                android:textColorHint="@android:color/black"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:id="@+id/recent_no"
@@ -423,7 +421,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Do you have a travel history to a COVID-19 Infected Area?"
-                                android:textColor="@android:color/holo_blue_dark"
+                                android:textColor="@android:color/black"
                                 android:textStyle="bold"
                                 android:id="@+id/travel_history_text"
                                 />
@@ -432,11 +430,11 @@
                                 android:layout_height="wrap_content"
                                 android:id="@+id/history_yes"
                                 android:hint="Yes"
-                                android:textColorHint="@android:color/holo_blue_dark"
+                                android:textColorHint="@android:color/black"
                                 />
 
                             <RadioButton
-                                android:textColorHint="@android:color/holo_blue_dark"
+                                android:textColorHint="@android:color/black"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:id="@+id/history_no"
@@ -455,7 +453,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Did you have direct contact or are taking care of a COVID-19 Patient?"
-                                android:textColor="@android:color/holo_blue_dark"
+                                android:textColor="@android:color/black"
                                 android:textStyle="bold"
                                 android:id="@+id/direct_contact_text"
                                 />
@@ -464,11 +462,11 @@
                                 android:layout_height="wrap_content"
                                 android:id="@+id/direct_yes"
                                 android:hint="Yes"
-                                android:textColorHint="@android:color/holo_blue_dark"
+                                android:textColorHint="@android:color/black"
                                 />
 
                             <RadioButton
-                                android:textColorHint="@android:color/holo_blue_dark"
+                                android:textColorHint="@android:color/black"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:id="@+id/direct_no"
@@ -485,7 +483,7 @@
                     android:layout_height="wrap_content"
                     app:hintTextColor="@color/black"
                     android:hint="Name"
-                    android:background="@drawable/border_red"
+                    android:background="@drawable/border_black"
                     >
                     <EditText
                         android:layout_width="match_parent"
@@ -503,7 +501,7 @@
                     android:layout_marginTop="10dp"
                     app:hintTextColor="@color/black"
                     android:hint="Phone Number"
-                    android:background="@drawable/border_red"
+                    android:background="@drawable/border_black"
                     >
                     <EditText
                         android:layout_width="match_parent"
@@ -521,7 +519,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:background="@drawable/border_red"
+                    android:background="@drawable/border_black"
                     >
 
                     <LinearLayout

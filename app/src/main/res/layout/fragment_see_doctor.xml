@@ -1,13 +1,95 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragment.SeeDoctor">
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
 
-    <TextView
+    >
+
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="See a Doctor" />
+        android:layout_height="wrap_content"
+        >
 
-</FrameLayout>
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:layout_alignParentTop="true"
+            android:id="@+id/lay0"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <TextView
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/home_head1"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@color/colorPrimary"
+                android:text="NEEDING MORE?"
+                />
+
+
+            <TextView
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/home_head2"
+                android:textSize="25sp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:text="Click the Below to Call"
+
+                />
+            <View
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="10dp"
+                android:layout_width="50dp"
+                android:layout_gravity="center"
+                android:layout_height="2dp"
+                android:textAlignment="center"
+                android:background="@android:color/black"
+                />
+            <TextView
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/home_head3"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textAlignment="center"
+                android:text="We have qualified doctors waiting to offer assistance."
+
+                />
+
+            <ImageView
+                android:layout_width="260dp"
+                android:layout_height="259dp"
+                android:layout_gravity="center"
+                android:src="@drawable/calldoctor" />
+
+            <Button
+                android:layout_marginTop="10dp"
+                android:padding="3dp"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:id="@+id/call_doctor"
+                android:ems="8"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/background_yellow"
+                android:text="Call Now"
+                />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</ScrollView>

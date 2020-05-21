@@ -26,8 +26,8 @@
                 android:id="@+id/home_head1"
                 android:textSize="25sp"
                 android:textStyle="bold"
+                android:textAlignment="center"
                 android:textColor="@color/black"
-                android:fontFamily="sans-serif"
                 android:text="How Can We Help You?"
                 />
 
@@ -36,14 +36,14 @@
                 android:layout_width="50dp"
                 android:layout_gravity="center"
                 android:layout_height="2dp"
-                android:background="@android:color/black"
+                android:background="@android:color/holo_red_dark"
                 />
             <View
                 android:layout_gravity="center"
                 android:layout_marginTop="3dp"
                 android:layout_width="50dp"
                 android:layout_height="2dp"
-                android:background="@android:color/black"
+                android:background="@android:color/holo_red_dark"
 
                 />
             <TextView
@@ -53,8 +53,8 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/home_head2"
                 android:textSize="18sp"
-                android:fontFamily="casual"
                 android:textStyle="bold"
+                android:textAlignment="center"
                 android:text="Pick a Category that relates to you"
                 />
         </LinearLayout>
