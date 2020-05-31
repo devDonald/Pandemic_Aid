@@ -71,7 +71,7 @@
                     android:gravity="center"
                     android:textSize="18sp"
                     android:textStyle="bold"
-                    android:text="Check the boxes that corresponds to your symptoms"
+                    android:text="Check the boxes that correspond to your symptoms"
                     />
 
                 <View
@@ -80,402 +80,132 @@
                     android:layout_width="match_parent"
                     android:layout_height="2dp"
                     android:background="@android:color/black"/>
-                <HorizontalScrollView
-                    android:background="@drawable/border_black"
-                    android:layout_width="wrap_content"
+
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:scrollbars="horizontal">
-                    <LinearLayout
+                    android:orientation="vertical">
+                    <CheckBox
+                        android:padding="8dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical">
-                        <RadioGroup
-                            android:layout_margin="10dp"
-                            android:id="@+id/cough_group"
-                            android:orientation="horizontal"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
-
-                            <TextView
-                                android:padding="8dp"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Do You Have Dry Cough?"
-                                android:textColor="@android:color/black"
-                                android:textStyle="bold"
-                                android:id="@+id/dry_cough_text"
-                                />
-                            <RadioButton
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:id="@+id/dry_cough_yes"
-                                android:hint="Yes"
-                                android:textColorHint="@android:color/black"
-                                />
-
-                            <RadioButton
-                                android:textColorHint="@android:color/black"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:id="@+id/dry_cough_no"
-                                android:hint="No"
-                                />
-                        </RadioGroup>
-                        <RadioGroup
-                            android:layout_margin="10dp"
-                            android:id="@+id/cold_group"
-                            android:orientation="horizontal"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
-
-                            <TextView
-                                android:padding="8dp"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Do you have Cold?"
-                                android:textColor="@android:color/black"
-                                android:textStyle="bold"
-                                android:id="@+id/cold_text"
-                                />
-                            <RadioButton
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:id="@+id/cold_yes"
-                                android:hint="Yes"
-                                android:textColorHint="@android:color/black"
-                                />
-
-                            <RadioButton
-                                android:textColorHint="@android:color/black"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:id="@+id/cold_no"
-                                android:hint="No"
-                                />
-                        </RadioGroup>
-                        <RadioGroup
-                            android:layout_margin="10dp"
-                            android:id="@+id/sore_group"
-                            android:orientation="horizontal"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
-
-                            <TextView
-                                android:padding="8dp"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Do you have Sore Throat?"
-                                android:textColor="@android:color/black"
-                                android:textStyle="bold"
-                                android:id="@+id/sore_text"
-                                />
-                            <RadioButton
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:id="@+id/sore_yes"
-                                android:hint="Yes"
-                                android:textColorHint="@android:color/black"
-                                />
-
-                            <RadioButton
-                                android:textColorHint="@android:color/black"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:id="@+id/sore_no"
-                                android:hint="No"
-                                />
-                        </RadioGroup>
-                        <RadioGroup
-                            android:layout_margin="10dp"
-                            android:id="@+id/diarrhea_group"
-                            android:orientation="horizontal"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
-
-                            <TextView
-                                android:padding="8dp"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Do you have Diarrhea?"
-                                android:textColor="@android:color/black"
-                                android:textStyle="bold"
-                                android:id="@+id/diarrhea_text"
-                                />
-                            <RadioButton
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:id="@+id/diarrhea_yes"
-                                android:hint="Yes"
-                                android:textColorHint="@android:color/black"
-                                />
-
-                            <RadioButton
-                                android:textColorHint="@android:color/black"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:id="@+id/diarrhea_no"
-                                android:hint="No"
-                                />
-                        </RadioGroup>
-                        <RadioGroup
-                            android:layout_margin="10dp"
-                            android:id="@+id/aches_group"
-                            android:orientation="horizontal"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
-
-                            <TextView
-                                android:padding="8dp"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Do you have a Head Ache?"
-                                android:textColor="@android:color/black"
-                                android:textStyle="bold"
-                                android:id="@+id/aches_text"
-                                />
-                            <RadioButton
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:id="@+id/aches_yes"
-                                android:hint="Yes"
-                                android:textColorHint="@android:color/black"
-                                />
-
-                            <RadioButton
-                                android:textColorHint="@android:color/black"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:id="@+id/aches_no"
-                                android:hint="No"
-                                />
-                        </RadioGroup>
-                        <RadioGroup
-                            android:layout_margin="10dp"
-                            android:id="@+id/fatigue_group"
-                            android:orientation="horizontal"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
-
-                            <TextView
-                                android:padding="8dp"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Are you experiencing Fatigue?"
-                                android:textColor="@android:color/black"
-                                android:textStyle="bold"
-                                android:id="@+id/fatigue_text"
-                                />
-                            <RadioButton
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:id="@+id/fatigue_yes"
-                                android:hint="Yes"
-                                android:textColorHint="@android:color/black"
-                                />
-
-                            <RadioButton
-                                android:textColorHint="@android:color/black"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:id="@+id/fatigue_no"
-                                android:hint="No"
-                                />
-                        </RadioGroup>
-                        <RadioGroup
-                            android:layout_margin="10dp"
-                            android:id="@+id/fever_group"
-                            android:orientation="horizontal"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
-
-                            <TextView
-                                android:padding="8dp"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Do you have Fever (Temp Above 38 degree celsuis)?"
-                                android:textColor="@android:color/black"
-                                android:textStyle="bold"
-                                android:id="@+id/fever_text"
-                                />
-                            <RadioButton
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:id="@+id/fever_yes"
-                                android:hint="Yes"
-                                android:textColorHint="@android:color/black"
-                                />
-
-                            <RadioButton
-                                android:textColorHint="@android:color/black"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:id="@+id/fever_no"
-                                android:hint="No"
-                                />
-                        </RadioGroup>
-                        <RadioGroup
-                            android:layout_margin="10dp"
-                            android:id="@+id/difficult_group"
-                            android:orientation="horizontal"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
-
-                            <TextView
-                                android:padding="8dp"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Do you have Difficulty Breathing?"
-                                android:textColor="@android:color/black"
-                                android:textStyle="bold"
-                                android:id="@+id/difficult_text"
-                                />
-                            <RadioButton
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:id="@+id/difficult_yes"
-                                android:hint="Yes"
-                                android:textColorHint="@android:color/black"
-                                />
-
-                            <RadioButton
-                                android:textColorHint="@android:color/black"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:id="@+id/difficult_no"
-                                android:hint="No"
-                                />
-                        </RadioGroup>
-                        <RadioGroup
-                            android:layout_margin="10dp"
-                            android:id="@+id/body_aches_group"
-                            android:orientation="horizontal"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
-
-                            <TextView
-                                android:padding="8dp"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Do you have MYALGIA or Body Aches?"
-                                android:textColor="@android:color/black"
-                                android:textStyle="bold"
-                                android:id="@+id/body_aches_text"
-                                />
-                            <RadioButton
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:id="@+id/body_aches_yes"
-                                android:hint="Yes"
-                                android:textColorHint="@android:color/black"
-                                />
-
-                            <RadioButton
-                                android:textColorHint="@android:color/black"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:id="@+id/body_aches_no"
-                                android:hint="No"
-                                />
-                        </RadioGroup>
-                        <RadioGroup
-                            android:layout_margin="10dp"
-                            android:id="@+id/recent_group"
-                            android:orientation="horizontal"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
-
-                            <TextView
-                                android:padding="8dp"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Have you travelled recently in the Last 14 days?"
-                                android:textColor="@android:color/black"
-                                android:textStyle="bold"
-                                android:id="@+id/recent_text"
-                                />
-                            <RadioButton
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:id="@+id/recent_yes"
-                                android:hint="Yes"
-                                android:textColorHint="@android:color/black"
-                                />
-
-                            <RadioButton
-                                android:textColorHint="@android:color/black"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:id="@+id/recent_no"
-                                android:hint="No"
-                                />
-                        </RadioGroup>
-                        <RadioGroup
-                            android:layout_margin="10dp"
-                            android:id="@+id/history_group"
-                            android:orientation="horizontal"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
-
-                            <TextView
-                                android:padding="8dp"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Do you have a travel history to a COVID-19 Infected Area?"
-                                android:textColor="@android:color/black"
-                                android:textStyle="bold"
-                                android:id="@+id/travel_history_text"
-                                />
-                            <RadioButton
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:id="@+id/history_yes"
-                                android:hint="Yes"
-                                android:textColorHint="@android:color/black"
-                                />
-
-                            <RadioButton
-                                android:textColorHint="@android:color/black"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:id="@+id/history_no"
-                                android:hint="No"
-                                />
-                        </RadioGroup>
-                        <RadioGroup
-                            android:layout_margin="10dp"
-                            android:id="@+id/direct_group"
-                            android:orientation="horizontal"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
-
-                            <TextView
-                                android:padding="8dp"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Did you have direct contact or are taking care of a COVID-19 Patient?"
-                                android:textColor="@android:color/black"
-                                android:textStyle="bold"
-                                android:id="@+id/direct_contact_text"
-                                />
-                            <RadioButton
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:id="@+id/direct_yes"
-                                android:hint="Yes"
-                                android:textColorHint="@android:color/black"
-                                />
-
-                            <RadioButton
-                                android:textColorHint="@android:color/black"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:id="@+id/direct_no"
-                                android:hint="No"
-                                />
-                        </RadioGroup>
-                    </LinearLayout>
-                </HorizontalScrollView>
-
+                        android:text="Do You Have Dry Cough?"
+                        android:textColor="@android:color/black"
+                        android:textStyle="bold"
+                        android:id="@+id/test_dry_cough"
+                        android:onClick="onCheckboxClicked"
+                        />
+                    <CheckBox
+                        android:padding="8dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Do you have Cold?"
+                        android:textColor="@android:color/black"
+                        android:textStyle="bold"
+                        android:id="@+id/test_cold"
+                        android:onClick="onCheckboxClicked"
+                        />
+                    <CheckBox
+                        android:padding="8dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Do you have Sore Throat?"
+                        android:textColor="@android:color/black"
+                        android:textStyle="bold"
+                        android:id="@+id/test_sore"
+                        android:onClick="onCheckboxClicked"
+                        />
+                    <CheckBox
+                        android:padding="8dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Do you have Diarrhea?"
+                        android:textColor="@android:color/black"
+                        android:textStyle="bold"
+                        android:id="@+id/test_diarrhea"
+                        android:onClick="onCheckboxClicked"
+                        />
+                    <CheckBox
+                        android:padding="8dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Do you have a Head Ache?"
+                        android:textColor="@android:color/black"
+                        android:textStyle="bold"
+                        android:id="@+id/test_headaches"
+                        android:onClick="onCheckboxClicked"
+                        />
+                    <CheckBox
+                        android:padding="8dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Are you experiencing Fatigue?"
+                        android:textColor="@android:color/black"
+                        android:textStyle="bold"
+                        android:id="@+id/test_fatigue"
+                        android:onClick="onCheckboxClicked"
+                        />
+                    <CheckBox
+                        android:padding="8dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Do you have Fever (Temp Above 38 degree celsuis)?"
+                        android:textColor="@android:color/black"
+                        android:textStyle="bold"
+                        android:onClick="onCheckboxClicked"
+                        android:id="@+id/test_fever"
+                        />
+                    <CheckBox
+                        android:padding="8dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Do you have Difficulty Breathing?"
+                        android:textColor="@android:color/black"
+                        android:textStyle="bold"
+                        android:onClick="onCheckboxClicked"
+                        android:id="@+id/test_difficult"
+                        />
+                    <CheckBox
+                        android:padding="8dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Do you have MYALGIA or Body Aches?"
+                        android:textColor="@android:color/black"
+                        android:textStyle="bold"
+                        android:id="@+id/test_body_aches"
+                        android:onClick="onCheckboxClicked"
+                        />
+                    <CheckBox
+                        android:padding="8dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Have you travelled recently in the Last 14 days?"
+                        android:textColor="@android:color/black"
+                        android:textStyle="bold"
+                        android:id="@+id/test_recent_travel"
+                        android:onClick="onCheckboxClicked"
+                        />
+                    <CheckBox
+                        android:padding="8dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Do you have a travel history to a COVID-19 Infected Area?"
+                        android:textColor="@android:color/black"
+                        android:textStyle="bold"
+                        android:onClick="onCheckboxClicked"
+                        android:id="@+id/test_travel_history"
+                        />
+                    <CheckBox
+                        android:padding="8dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Did you have direct contact or are taking care of a COVID-19 Patient?"
+                        android:textColor="@android:color/black"
+                        android:textStyle="bold"
+                        android:onClick="onCheckboxClicked"
+                        android:id="@+id/test_direct_contact"
+                        />
+                </LinearLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_marginTop="10dp"

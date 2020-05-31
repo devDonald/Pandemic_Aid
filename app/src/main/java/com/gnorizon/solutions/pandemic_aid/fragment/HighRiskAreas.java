@@ -4,9 +4,11 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -26,7 +28,9 @@ import com.kaopiz.kprogresshud.KProgressHUD;
 public class HighRiskAreas extends Fragment {
     private View riskView;
     private WebView webView;
+    private SwipeRefreshLayout swipe;
     private KProgressHUD hud;
+    private String current_url = "https://reportcovid19.org/riskareas";
 
     public HighRiskAreas() {
         // Required empty public constructor
@@ -39,6 +43,8 @@ public class HighRiskAreas extends Fragment {
         // Inflate the layout for this fragment
         riskView = inflater.inflate(R.layout.fragment_high_risk_areas, container, false);
         webView = (WebView) riskView.findViewById(R.id.webview_high_risk);
+        swipe = riskView.findViewById(R.id.swipe);
+
 
         hud = KProgressHUD.create(getContext())
                 .setStyle(KProgressHUD.Style.SPIN_INDETERMINATE)
@@ -51,32 +57,16 @@ public class HighRiskAreas extends Fragment {
                 .setAutoDismiss(true);
 
 
-        webView.setWebViewClient(new MyWebViewClient());
+        swipe.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
 
-        String url = "https://www.reportcovid19.org/riskareas/";
-
-        //webView.getSettings().setJavaScriptEnabled(true);
-        webView.getSettings().setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK);
-        webView.loadUrl(url);
-
-        webView.loadUrl("https://www.reportcovid19.org/riskareas/");
-
-        webView.getSettings().setLoadWithOverviewMode(true);
-        webView.getSettings().setUseWideViewPort(true);
-        webView.getSettings().setBuiltInZoomControls(true);
-
-
-        // Force links and redirects to open in the WebView instead of in a browser
-
-        webView.setDownloadListener(new DownloadListener() {
-            public void onDownloadStart(String url, String userAgent,
-                                        String contentDisposition, String mimetype,
-                                        long contentLength) {
-                Intent i = new Intent(Intent.ACTION_VIEW);
-                i.setData(Uri.parse(url));
-                startActivity(i);
+                loadWeb(current_url);
             }
         });
+
+
+        loadWeb(current_url);
         return riskView;
 
 
@@ -93,16 +83,59 @@ public class HighRiskAreas extends Fragment {
         @Override
         public void onPageStarted(WebView view, String url, Bitmap favicon) {
             super.onPageStarted(view, url, favicon);
-            hud.show();
+            //hud.show();
         }
 
         @Override
         public void onPageFinished(WebView view, String url) {
             super.onPageFinished(view, url);
-            if(hud!=null){
-                hud.dismiss();
-            }
+//            if(hud!=null){
+//                hud.dismiss();
+//            }
         }
+    }
+    public void loadWeb(String url){
+
+        webView.setWebViewClient(new MyWebViewClient());
+
+
+        webView.getSettings().setJavaScriptEnabled(true);
+        webView.getSettings().setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK);
+        webView.loadUrl(url);
+
+        //webView.loadUrl("https://reportcovid19.org/riskareas");
+
+        webView.getSettings().setLoadWithOverviewMode(true);
+        webView.getSettings().setUseWideViewPort(true);
+        webView.getSettings().setBuiltInZoomControls(true);
+
+
+        if (Build.VERSION.SDK_INT >= 19) {
+            webView.setLayerType(View.LAYER_TYPE_HARDWARE, null);
+        }
+        else if(Build.VERSION.SDK_INT >=15 && Build.VERSION.SDK_INT < 19) {
+            webView.setLayerType(View.LAYER_TYPE_SOFTWARE, null);
+        }
+        swipe.setRefreshing(true);
+        webView.loadUrl(url);
+        webView.setWebViewClient(new MyWebViewClient(){
+
+            @Override
+            public boolean shouldOverrideUrlLoading(WebView view, String url) {
+                current_url =url;
+                return super.shouldOverrideUrlLoading(view, url);
+            }
+
+            public void onReceivedError(WebView view, int errorCode, String description, String failingUrl) {
+                webView.loadUrl("file:///android_asset/error.html");
+            }
+
+            public  void  onPageFinished(WebView view, String url){
+                //Hide the SwipeReefreshLayout
+                swipe.setRefreshing(false);
+            }
+
+        });
     }
 
     @Override

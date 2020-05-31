@@ -14,6 +14,7 @@ import androidx.fragment.app.FragmentActivity;
 
 import android.graphics.Color;
 import android.location.Location;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -26,8 +27,15 @@ import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.androidnetworking.AndroidNetworking;
+import com.androidnetworking.common.Priority;
+import com.androidnetworking.error.ANError;
+import com.androidnetworking.interfaces.JSONObjectRequestListener;
 import com.gnorizon.solutions.pandemic_aid.R;
 import com.gnorizon.solutions.pandemic_aid.fragment.ContactChannels;
+import com.gnorizon.solutions.pandemic_aid.helpers.JsonParser;
+import com.gnorizon.solutions.pandemic_aid.helpers.ResponseModel;
+import com.gnorizon.solutions.pandemic_aid.helpers.Util;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesUtil;
 import com.google.android.gms.common.api.GoogleApiClient;
@@ -43,11 +51,13 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.navigation.NavigationView;
-import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.FirebaseFirestore;
 import com.ikhiloyaimokhai.nigeriastatesandlgas.Nigeria;
+import com.jacksonandroidnetworking.JacksonParserFactory;
 import com.kaopiz.kprogresshud.KProgressHUD;
 import com.valdesekamdem.library.mdtoast.MDToast;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;
@@ -84,18 +94,23 @@ public class ReportACase extends AppCompatActivity implements
     private List<String> states;
     private static final int SPINNER_HEIGHT = 500;
 
-    private RadioGroup val1, val2,val3, val4,val5;
+    private CheckBox val1, val2,val3, val4,val5;
     private EditText etname, etphone, etComment;
-    private String dry_cough="No", sore_throat="No", have_traveled="No",comment;
-    private String travel_history="No", direct_contact="No";
+    private int dry_cough=0, sore_throat=0, have_traveled=0,travel_history= 0,direct_contact=0;
+    private String comment;
     private String name,phone;
     Button submit_report;
+    private Util util;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        AndroidNetworking.initialize(getApplicationContext());
+        AndroidNetworking.setParserFactory(new JacksonParserFactory());
         setContentView(R.layout.activity_report_a_case);
+        util = new Util();
 
         initControls();
         // First we need to check availability of play services
@@ -118,72 +133,14 @@ public class ReportACase extends AppCompatActivity implements
 
         etphone = findViewById(R.id.report_number);
         etname = findViewById(R.id.report_name);
-        val1 = findViewById(R.id.rcough_group);
-        val2 = findViewById(R.id.rsoar_group);
-        val3 = findViewById(R.id.rrecent_group);
-        val4 = findViewById(R.id.rhistory_group);
-        val5 = findViewById(R.id.rdirect_group);
+        val1 = findViewById(R.id.report_cough);
+        val2 = findViewById(R.id.report_sore);
+        val3 = findViewById(R.id.report_recent_travel);
+        val4 = findViewById(R.id.report_travel_history);
+        val5 = findViewById(R.id.report_direct_contact_text);
         etComment = findViewById(R.id.report_comment);
 
         submit_report = findViewById(R.id.bt_report_case);
-
-
-        val1.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup radioGroup, int i) {
-                if (i==R.id.rcough_yes){
-                    dry_cough="Yes";
-                } else if (i==R.id.rcough_no){
-                    dry_cough="No";
-                }
-
-            }
-        });
-        val2.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup radioGroup, int i) {
-                if (i==R.id.rsoar_yes){
-                    sore_throat="Yes";
-                } else if (i==R.id.rsoar_no){
-                    sore_throat="No";
-                }
-
-            }
-        });
-        val3.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup radioGroup, int i) {
-                if (i==R.id.rrecent_yes){
-                    have_traveled="Yes";
-                } else if (i==R.id.rrecent_no){
-                    have_traveled="No";
-                }
-
-            }
-        });
-        val4.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup radioGroup, int i) {
-                if (i==R.id.rhistory_yes){
-                    travel_history="Yes";
-                } else if (i==R.id.rhistory_no){
-                    travel_history="No";
-                }
-
-            }
-        });
-        val5.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup radioGroup, int i) {
-                if (i==R.id.rdirect_yes){
-                    direct_contact="Yes";
-                } else if (i==R.id.rdirect_no){
-                    direct_contact="No";
-                }
-
-            }
-        });
-
 
         mStateSpinner = findViewById(R.id.stateSpinner1);
         mLgaSpinner = findViewById(R.id.lgaSpinner1);
@@ -201,108 +158,84 @@ public class ReportACase extends AppCompatActivity implements
                 name = etname.getText().toString().trim();
                 phone = etphone.getText().toString().trim();
                 comment = etComment.getText().toString().trim();
-                if (name.isEmpty()){
+                if (name.isEmpty()) {
                     etname.setError("Pls give your name");
-                } else  if (phone.isEmpty()|| !phone.startsWith("0")){
+                } else if (phone.isEmpty() || !phone.startsWith("0")) {
                     etphone.setError("Pls give a valid number");
 
-                } else  if (comment.isEmpty()){
-                    etComment.setError("Pls give your comment");
-                }else{
+                }  else {
+                    if (util.isNetworkAvailable(ReportACase.this)){
+                        try {
+                            int score = sore_throat+direct_contact+have_traveled+dry_cough+travel_history;
+                            String lng = Double.toString(longitude);
+                            String lat = Double.toString(latitude);
+                            String scr = Integer.toString(score);
 
-                    hud.show();
-                    FirebaseFirestore db = FirebaseFirestore.getInstance();
-                    Map<String, Object> test = new HashMap<>();
-                    test.put("Has Dry Cough", dry_cough);
-                    test.put("Has Sore Throat", sore_throat);
-                    test.put("Had Travelled Recently", have_traveled);
-                    test.put("Had Travelled to a Covid-19 Area", travel_history);
-                    test.put("Had Direct Contact with a COVID-19 Patient", direct_contact);
-                    test.put("name", name);
-                    test.put("phone", phone);
-                    test.put("state", mState);
-                    test.put("lga", mLga);
-                    test.put("longitude", longitude);
-                    test.put("latitude", latitude);
+                            hud.show();
+                            AndroidNetworking.post("https://reportcovid19.org/api/sendreport")
+                                    .addBodyParameter("name", name)
+                                    .addBodyParameter("phone_number", phone)
+                                    .addBodyParameter("state", mState)
+                                    .addBodyParameter("lga", mLga)
+                                    .addBodyParameter("lng",lng)
+                                    .addBodyParameter("lat", lat)
+                                    .addBodyParameter("score", scr)
+                                    .setPriority(Priority.MEDIUM)
+                                    .build()
+                                    .getAsJSONObject(new JSONObjectRequestListener() {
+                                        @Override
+                                        public void onResponse(JSONObject response) {
+                                            hud.dismiss();
 
-                    db.collection("Report")
-                            .add(test)
-                            .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
-                                @Override
-                                public void onSuccess(DocumentReference documentReference) {
-                                    hud.dismiss();
-                                    if (have_traveled.equals("Yes") || travel_history.equals("Yes") || direct_contact.equals("Yes") && sore_throat.equals("Yes") && dry_cough.equals("Yes")){
-                                        AlertDialog.Builder alertDialog = new AlertDialog.Builder(ReportACase.this);
-                                        alertDialog.setTitle("Report Submitted Successfully");
+                                            try {
+                                                JSONObject json = new JSONObject(String.valueOf(response));
+                                                JSONObject res = json.getJSONObject("data");
+                                                String report = res.getString("report");
+                                                String message = res.getString("message");
+                                                String name = res.getString("name");
 
-                                        alertDialog.setMessage("From Your Report This person is Suspected to have symptoms of COVID-19. Pls Contact NCDC for proper Check Up");
+                                                AlertDialog.Builder alertDialog = new AlertDialog.Builder(ReportACase.this);
+                                                alertDialog.setTitle(message);
 
-                                        alertDialog.setPositiveButton("Ok Contact NCDC", new DialogInterface.OnClickListener() {
-                                            public void onClick(DialogInterface dialog,int which) {
-                                                Intent contactChannel = new Intent(ReportACase.this, ContactChannels.class);
-                                                startActivity(contactChannel);
-                                                dialog.cancel();
-                                                finish();
+                                                alertDialog.setMessage("Hello " +name+" "+report);
+
+                                                alertDialog.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                                                    public void onClick(DialogInterface dialog,int which) {
+                                                        Intent contactChannel = new Intent(ReportACase.this, MainActivity.class);
+                                                        contactChannel.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                                        contactChannel.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                                                        startActivity(contactChannel);
+                                                        dialog.cancel();
+                                                        finish();
+                                                    }
+                                                });
+                                                alertDialog.show();
+
+                                            } catch (JSONException e) {
+                                                e.printStackTrace();
                                             }
-                                        });
-                                        alertDialog.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-                                            public void onClick(DialogInterface dialog, int which) {
-                                                Intent contactChannel = new Intent(ReportACase.this, MainActivity.class);
-                                                contactChannel.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                                                contactChannel.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                                                startActivity(contactChannel);
-                                                finish();
-                                                dialog.cancel();
+                                        }
+                                        @Override
+                                        public void onError(ANError error) {
+                                            hud.dismiss();
+                                            MDToast.makeText(ReportACase.this,error.getMessage(),
+                                                    MDToast.LENGTH_SHORT, MDToast.TYPE_ERROR).show();                                        }
+                                    });
 
-                                            }
-                                        });
 
-                                        // Showing Alert Message
-                                        alertDialog.show();
-                                    } else {
-                                        AlertDialog.Builder alertDialog = new AlertDialog.Builder(ReportACase.this);
-                                        alertDialog.setTitle("Report Submitted Successfully");
-
-                                        alertDialog.setMessage("Pls Stay Safe!");
-
-                                        alertDialog.setPositiveButton("Back to Home", new DialogInterface.OnClickListener() {
-                                            public void onClick(DialogInterface dialog,int which) {
-                                                Intent contactChannel = new Intent(ReportACase.this, MainActivity.class);
-                                                contactChannel.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                                                contactChannel.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                                                startActivity(contactChannel);
-                                                dialog.cancel();
-                                                finish();
-                                            }
-                                        });
-                                        alertDialog.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-                                            public void onClick(DialogInterface dialog, int which) {
-                                                Intent contactChannel = new Intent(ReportACase.this, MainActivity.class);
-                                                contactChannel.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                                                contactChannel.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                                                startActivity(contactChannel);
-                                                dialog.cancel();
-                                                finish();                                            }
-                                        });
-
-                                        // Showing Alert Message
-                                        alertDialog.show();
-                                    }
-                                }
-                            })
-                            .addOnFailureListener(new OnFailureListener() {
-                                @Override
-                                public void onFailure(@NonNull Exception e) {
-                                    hud.dismiss();
-                                    MDToast.makeText(ReportACase.this,"Connection not successful, pls try again",MDToast.LENGTH_LONG,MDToast.TYPE_ERROR).show();
-                                }
-                            });
+                        } catch (Exception e){
+                            e.printStackTrace();
+                        }
+                    } else {
+                        MDToast.makeText(ReportACase.this,"No Network Connection",
+                                MDToast.LENGTH_SHORT, MDToast.TYPE_ERROR).show();
+                    }
                 }
-            }
-        });
+                }
+            });
 
 
-    }
+        }
 
     private void initControls() {
 // Obtain the SupportMapFragment and get notified when the map is ready to be used.
@@ -310,7 +243,27 @@ public class ReportACase extends AppCompatActivity implements
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
     }
-
+    public void onCheckboxClicked(View view) {
+        boolean checked = ((CheckBox) view).isChecked();
+        // Check which checkbox was clicked
+        switch(view.getId()) {
+            case R.id.report_cough:
+                dry_cough = checked? 1:0;
+                break;
+            case R.id.report_sore:
+                sore_throat = checked? 1:0;
+                break;
+            case R.id.report_recent_travel:
+                have_traveled = checked? 3:0;
+                break;
+            case R.id.report_travel_history:
+                travel_history = checked? 4:0;
+                break;
+            case R.id.report_direct_contact_text:
+                direct_contact = checked? 5:0;
+                break;
+        }
+    }
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
@@ -582,4 +535,7 @@ public class ReportACase extends AppCompatActivity implements
             ex.printStackTrace();
         }
     }
+
+
+
 }
